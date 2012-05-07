@@ -3,12 +3,16 @@ module M2A::CLI
 
   def run!
     opts = Argparse::Argparser.new.opts
-    # M2A.configure do |conf|
-    #   conf.width = opts.width
-    #   conf.height = opts.height
-    # end
+    m2a = M2A.new.tap do |m2a|
+      m2a.configure do |conf|
+        conf.width = opts.width if opts.width
+        conf.height = opts.height if opts.height
+      end
+    end
 
-    meme = opts.meme
+    meme = M2A.lookup_meme(opts.meme)
+
+    puts m2a.render(meme)
 
   end
 

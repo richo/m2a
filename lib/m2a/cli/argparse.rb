@@ -2,10 +2,6 @@ require 'optparse'
 require 'ostruct'
 module M2A::CLI
   module Argparse
-    SANE_DEFAULTS = {
-      :width => 80,
-      :height => 24
-    }
 
     class Argparser
 
@@ -37,10 +33,10 @@ module M2A::CLI
         if ARGV.empty? == 0
           print_help_and_exit
         else
-          options[:meme] = ARGV[0]
+          options[:meme] = ARGV.join(" ")
         end
 
-        OpenStruct.new(SANE_DEFAULTS.merge(options))
+        OpenStruct.new(options)
       end
 
       def print_help_and_exit
