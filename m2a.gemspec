@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name      = "m2a"
-  s.version   = "0.0.0"
+  s.version   = "0.0.1"
   s.authors   = ["Rich Healey"]
   s.email     = ["richo@psych0tik.net"]
   s.homepage  = "http://github.com/richoH/m2a"
