@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require 'm2a'
+
+M2A::CLI.run!
